@@ -4,7 +4,7 @@
 // A class that holds a dog's name and can make it speak.
 //
 // ****************************************************************
-public class Dog
+public class Dog extends Animal
 {
     protected String name;
 
@@ -31,6 +31,10 @@ public class Dog
     public String bark()
     {
         return "Dog barking";
+    }
+
+    public String eat(){
+        return "Dog is eating";
     }
 
 }
