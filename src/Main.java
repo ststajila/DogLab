@@ -6,6 +6,8 @@
 // ****************************************************************
 
 
+import java.util.ArrayList;
+
 public class Main
 {
     public static void main(String[] args)
@@ -29,16 +31,30 @@ public class Main
         dogs[1] = new Yorkshire("Bella", 5);
         dogs[2] = new Labrador("Luna", "white");
 
-//        //for(int i = 0; i < dogs.length; i++){
-//            System.out.println(dogs[i].bark());
-//    }
-        for(Dog puppy: dogs){
-            System.out.println(puppy.bark());
+      for(int i = 0; i < dogs.length; i++){
+            System.out.println(dogs[i].bark());
+      }
+        for(Dog action: dogs){
+            System.out.println(action.bark());
         }
 
-        // We need to cast because lab
+        /* There is no waddle method in the Dog class, labrador is stored as a dog class in the array, we need to cast to force the compiler to go down one level,
+        * there is a bark method in the Dog class, so it checks if Labrador class overrides it, uses super class method if child didn't override it */
         ((Labrador)(dogs[2])).waddle();
 
+        ArrayList<Dog> puppy = new ArrayList<Dog>();
+        puppy.add(new Dog("Max"));
+        puppy.add(new Yorkshire("Bella", 3));
+        puppy.add(new Labrador("Luna", "white"));
+
+        for (int i = 0; i < puppy.size(); i++){
+            System.out.println(puppy.get(i).bark());
+    }
+        for (Dog cat: puppy){
+            System.out.println(cat.bark());
+        }
+
+        ((Labrador)(puppy.get(2))).waddle();
 
 
     }
