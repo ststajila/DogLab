@@ -67,7 +67,10 @@ public class Main
         animals.get(2).setAge(9);
 
         for (int i = 0; i < animals.size(); i++){
-
+        System.out.println(animals.get(i).getAge());
+        System.out.println(animals.get(i).eat());
+        // Dog objects are stored as an Animal, there is no bark method in this class, the code don't compiles. To solve this issue we can cast or can write a bark method in the Animal class, dog class may override it or use one Animal provide. Another way to solve the error is make an abstract method that will force childs to have their own bark method.
+        System.out.println(animals.get(i).bark());
         }
 
 

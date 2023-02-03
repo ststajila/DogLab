@@ -8,6 +8,8 @@ public abstract class Animal {
     // If method is abstract, class must be abstract! Every child, in this case Dog class, must write its own eat method!
     public abstract String eat();
 
+    public abstract String bark(); 
+
     public void setAge(int age){
         this.age = age;
     }
@@ -15,4 +17,6 @@ public abstract class Animal {
     public int getAge(){
         return age;
     }
+
+    
 }
